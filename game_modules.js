@@ -1062,7 +1062,7 @@ class CharacterSystem {
             x: width / 2,
             y: floorPos_y,
             vy: 0,
-            speed: 10,
+            speed: 5,  // 减少移动速度
             state: "standing",
             direction: "right",
             isJumping: false,
@@ -1279,7 +1279,7 @@ class CharacterSystem {
 
                 // 只有在安全距离外才移动
                 if (distToCat > mouse.minDistanceFromCat + 30) {
-                    mouse.speed = 1.2;
+                    mouse.speed = 0.8;  // 减少老鼠移动速度
                 } else {
                     mouse.speed = 0.5; // 减速
                 }
@@ -1289,7 +1289,7 @@ class CharacterSystem {
                 // 追踪行为：发现猫咪后追踪，但保持最小距离
                 if (distToCat < mouse.detectionRange && distToCat > mouse.minDistanceFromCat + 40) {
                     mouse.isChasing = true;
-                    mouse.speed = 2.5; // 追踪时加速
+                    mouse.speed = 1.5; // 追踪时加速（减少速度）
 
                     // 朝向猫咪
                     if (this.cat.x > mouse.x) {
@@ -1304,7 +1304,7 @@ class CharacterSystem {
                     mouse.direction = mouse.x > this.cat.x ? 1 : -1; // 远离猫咪
                 } else if (distToCat > mouse.detectionRange * 1.5) {
                     mouse.isChasing = false;
-                    mouse.speed = 1.2; // 恢复正常速度
+                    mouse.speed = 0.8;  // 减少老鼠移动速度 // 恢复正常速度
                 }
                 break;
 
@@ -1594,7 +1594,7 @@ class CharacterSystem {
         // 能力效果
         switch (type) {
             case 'speed':
-                this.cat.speed = 15; // 提升速度
+                this.cat.speed = 8; // 提升速度（减少加速效果）
                 break;
             case 'jump':
                 // 跳跃能力在jump()方法中检查

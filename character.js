@@ -6,7 +6,7 @@ class CharacterSystem {
             x: width / 2,               // Horizontal position (center of screen)
             y: floorPos_y,              // Vertical position (on ground level)
             vy: 0,                      // Vertical velocity for jumping/falling
-            speed: 10,                  // Horizontal movement speed
+            speed: 5,                   // Horizontal movement speed (reduced from 10)
             state: "standing",          // Current animation state
             direction: "right",         // Facing direction
             isJumping: false,           // Jump state flag
@@ -49,7 +49,7 @@ class CharacterSystem {
 
         // Apply gravity and update vertical position
         this.cat.y += this.cat.vy;                  // Update vertical position
-        this.cat.vy += 0.8;                         // Apply gravity acceleration
+        this.cat.vy += 0.5;                         // Apply gravity acceleration (reduced from 0.8)
 
         // Ground collision detection
         if (this.cat.y > floorPos_y) {
@@ -67,7 +67,7 @@ class CharacterSystem {
         // Move each mouse enemy to the right
         for (let m of this.mice) {
             if (!m.alive) continue;                 // Skip dead mice
-            m.x += 1.2;                             // Move mouse rightward
+            m.x += 0.8;                             // Move mouse rightward (reduced from 1.2)
             if (m.x > worldWidth + 100) m.alive = false;  // Remove if off-screen
         }
 
@@ -92,7 +92,7 @@ class CharacterSystem {
     jump() {
         // Only allow jumping when on ground
         if (this.cat.y === floorPos_y) {
-            this.cat.vy = -18;                      // Apply upward velocity
+            this.cat.vy = -12;                      // Apply upward velocity (reduced from -18)
             this.cat.isJumping = true;              // Set jump state
         }
     }

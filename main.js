@@ -16,6 +16,9 @@ function setup() {
     let canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('game-main');
 
+    // Set frame rate to slow down the game
+    frameRate(30);  // 从默认60fps降低到30fps
+
     // Set Chinese font for text rendering
     textFont('Arial');
 
