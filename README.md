@@ -11,13 +11,27 @@
 
 ## 📖 Project Overview
 
-**Black Cat Granary Saga: Dream Prologue** is a 2D platformer game where players control a brave black cat warrior protecting the village granary in the autumn of 1970. The game combines action, adventure, and collection elements with stunning visual effects and rich gameplay mechanics to deliver an immersive gaming experience.
+**Black Cat Granary Saga: Dream Prologue** is a heartfelt 2D platformer game that serves as both an entertaining adventure and a deeply personal tribute to childhood memories. Players control Shadowpaw, a brave black cat warrior protecting the village granary in the autumn of 1970. 
+
+This game is more than just entertainment - it's a digital memorial to a beloved mountain cat companion who brought warmth, joy, and unconditional love during six precious years of childhood. Every element of the game, from the gentle purring sounds to the protective nature of the protagonist, reflects the deep bond between a child and their most treasured feline friend.
+
+The game combines action, adventure, and collection elements with stunning visual effects and rich gameplay mechanics to deliver an immersive gaming experience that honors the memory of a special companion who will never be forgotten.
 
 ### 🎯 Game Story Background
+
+#### 💝 A Personal Tribute to Childhood Memories
+
+This game is deeply inspired by a cherished childhood memory. When I was young, I had the most beautiful mountain cat who became my dearest companion for six wonderful years. Through those precious childhood years, this magnificent feline was always there for me - providing comfort during cold winter nights, sharing warm cuddles, playing together, and taking care of me in ways only a true friend could.
+
+Those six years were filled with unconditional love, gentle purrs that lulled me to sleep, and countless moments of pure happiness. Even now, I miss that mountain cat dearly, and this game is my way of keeping those beautiful memories alive. Every jump, every adventure in this game is a tribute to the warmth and protection that special cat gave me during my most vulnerable years.
+
+#### 🐱 The Game's Story
 
 Late autumn, 1970, 5:24 PM. Outside the village granary, the black cat Shadowpaw gazes into the distance. The Mouse King and his army have been stealing food, leaving villagers hungry. The village chief hands Shadowpaw his last cornbread, hoping he can protect the granary and restore hope.
 
 As night falls, the wind carries whispers of the mouse horde. Shadowpaw tightens his cloak and embarks on his journey of defense...
+
+The game's protagonist, Shadowpaw, embodies the spirit of that beloved mountain cat - brave, protective, and filled with love. As players guide Shadowpaw through the granary defense, they're not just playing a game; they're experiencing a journey of love, memory, and the unbreakable bond between a child and their most treasured companion.
 
 ## ✨ Core Features
 
