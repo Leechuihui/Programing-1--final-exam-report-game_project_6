@@ -1,0 +1,40 @@
+{
+    "name": "black-cat-granary-saga",
+    "version": "1.0.0",
+    "description": "A 2D platformer game developed with p5.js - University of London Computer Science Final Assignment",
+    "main": "index.html",
+    "scripts": {
+        "start": "http-server -p 8000 -c-1",
+        "dev": "http-server -p 8000 -c-1 -o",
+        "build": "echo 'No build step required for static files'",
+        "deploy": "gh-pages -d ."
+    },
+    "keywords": [
+        "game",
+        "p5js",
+        "2d",
+        "platformer",
+        "javascript",
+        "html5",
+        "canvas",
+        "university",
+        "assignment"
+    ],
+    "author": "University of London Computer Science Student",
+    "license": "MIT",
+    "devDependencies": {
+        "http-server": "^14.1.1",
+        "gh-pages": "^6.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/your-username/game_project_6.git"
+    },
+    "bugs": {
+        "url": "https://github.com/your-username/game_project_6/issues"
+    },
+    "homepage": "https://your-username.github.io/game_project_6",
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}

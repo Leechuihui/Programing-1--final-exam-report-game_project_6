@@ -1,0 +1,250 @@
+# Black Cat Granary Saga: Dream Prologue 🐱⚔️
+
+> **University of London Computer Science Undergraduate Final Programming Assignment 1**  
+> A 2D platformer game developed with p5.js, telling the adventure story of a black cat warrior protecting the granary
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-blue?style=for-the-badge&logo=github)](https://your-username.github.io/game_project_6)
+[![p5.js](https://img.shields.io/badge/p5.js-1.9.0-ff6b6b?style=for-the-badge&logo=p5.js)](https://p5js.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-f7df1e?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+## 📖 Project Overview
+
+**Black Cat Granary Saga: Dream Prologue** is a 2D platformer game where players control a brave black cat warrior protecting the village granary in the autumn of 1970. The game combines action, adventure, and collection elements with stunning visual effects and rich gameplay mechanics to deliver an immersive gaming experience.
+
+### 🎯 Game Story Background
+
+Late autumn, 1970, 5:24 PM. Outside the village granary, the black cat Shadowpaw gazes into the distance. The Mouse King and his army have been stealing food, leaving villagers hungry. The village chief hands Shadowpaw his last cornbread, hoping he can protect the granary and restore hope.
+
+As night falls, the wind carries whispers of the mouse horde. Shadowpaw tightens his cloak and embarks on his journey of defense...
+
+## ✨ Core Features
+
+### 🎮 Game Mechanics
+- **Platform Jumping System**: Smooth 2D physics engine with precise jump controls
+- **Combat System**: Strategic battles with intelligent AI mouse enemies
+- **Collection System**: Gather fish, apples, rice, and other items to restore health
+- **Power-up System**: Gain special abilities like speed, jump boost, shield, and magnet
+- **Combo System**: Score multipliers for consecutive actions
+
+### 🌤️ Dynamic Weather System
+- **Day/Night Cycle**: Visual changes between day and night
+- **Rain & Snow Effects**: Realistic particle systems for precipitation
+- **Lightning Effects**: Dramatic lightning animations during storms
+- **Ground Snow Accumulation**: Physical snow accumulation on the ground
+- **Weather Timer**: Automatic weather state transitions
+
+### 🎨 Visual Effects
+- **Particle Systems**: Rich visual effects and animations
+- **Starry Sky Background**: Dynamic starfield and meteor effects
+- **Cloud Platforms**: Jumpable moving cloud platforms
+- **Diverse Terrain**: Hills, rocks, flowers, caves, and other environmental elements
+- **Lotus Leaf System**: Dynamic lotus leaves floating on water
+
+### 🎵 Audio System
+- **Background Music**: Immersive game background music
+- **Sound Effects**: Audio feedback for jumps, collections, and combat
+- **Weather Audio**: Environmental sounds like rain and wind
+- **Dynamic Audio**: Audio adjustments based on game state
+
+### 📊 Progress System
+- **Scoring System**: Multi-layered scoring mechanism
+- **Achievement System**: 15 different achievements to unlock
+- **Level System**: Experience points and level progression
+- **Statistics System**: Detailed game data tracking
+
+## 🛠️ Technology Stack
+
+### Frontend Technologies
+- **p5.js 1.9.0** - 2D graphics rendering and game engine
+- **p5.sound** - Audio processing and sound effects
+- **HTML5 Canvas** - Game canvas rendering
+- **CSS3** - UI styling and animations
+- **JavaScript ES6+** - Game logic and interactions
+
+### Architecture Design
+- **Modular Design**: Clear code organization structure
+- **Object-Oriented Programming**: Code encapsulation using ES6 classes
+- **Event-Driven**: Responsive user interaction system
+- **State Management**: Comprehensive game state control
+
+## 🚀 Quick Start
+
+### Requirements
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Support for HTML5 Canvas and Web Audio API
+- Recommended screen resolution: 1920x1080 or higher
+
+### Installation and Running
+
+1. **Clone the project**
+   ```bash
+   git clone https://github.com/your-username/game_project_6.git
+   cd game_project_6
+   ```
+
+2. **Start local server**
+   ```bash
+   # Using Python to start local server
+   python -m http.server 8000
+   
+   # Or using Node.js
+   npx http-server
+   
+   # Or using Live Server extension (recommended)
+   ```
+
+3. **Access the game**
+   ```
+   http://localhost:8000
+   ```
+
+### Online Experience
+- [GitHub Pages Online Version](https://your-username.github.io/game_project_6)
+
+## 🎮 Game Controls
+
+### Basic Controls
+| Key | Function |
+|-----|----------|
+| `WASD` / `Arrow Keys` | Move cat |
+| `Spacebar` | Jump |
+| `Left Mouse Button` | Jump |
+| `Right Mouse Button` | Shoot fishbone |
+
+### Special Functions
+| Key | Function |
+|-----|----------|
+| `P` | Pause/Resume game |
+| `R` | Restart game |
+| `M` | Toggle audio |
+| `N` | Toggle day/night mode |
+| `G` | Toggle snow effect |
+| `T` | Auto-test jump |
+| `X` | Reset cat position |
+
+## 📁 Project Structure
+
+```
+game_project_6/
+├── index.html              # Main page file
+├── sketch.js               # p5.js main program entry
+├── main.js                 # Game main logic controller
+├── character.js            # Character system module
+├── environment.js          # Environment system module
+├── weather.js              # Weather system module
+├── score_system.js         # Score system module
+├── audio_system.js         # Audio system module
+├── game_modules.js         # Game modules collection
+├── p5.min.js               # p5.js library file
+├── p5.sound.min.js         # p5.sound library file
+├── assets/                 # Assets folder
+│   ├── audio/              # Audio files
+│   │   └── background.mp3  # Background music
+│   └── images/             # Image resources
+│       ├── story1.jpg      # Story illustration 1
+│       ├── story2.jpg      # Story illustration 2
+│       └── story3.jpg      # Story illustration 3
+├── asset/                  # Additional assets
+│   ├── frog.mp3           # Frog sound effect
+│   └── rain.mp3           # Rain sound effect
+├── story.md               # Story background document
+├── README.md              # Project documentation
+└── docs/                  # Technical documentation
+    ├── development_log.md # Development log
+    ├── technical_docs.md  # Technical documentation
+    └── architecture.md    # Architecture design
+```
+
+## 🎯 Game Objectives
+
+### Main Goals
+- **Collect Fish**: Gain 25 points and restore 15 health
+- **Defeat Mice**: Gain 10 points and increase combo
+- **Collect Items**: Apples (5 points), rice (15 points) for bonus rewards
+- **Reach 1000 Points**: Complete the level challenge
+
+### Achievement System
+- 🏆 **First Kill** - Defeat your first mouse
+- 🎯 **Mouse Hunter** - Defeat 10 mice
+- 🐟 **Fish Lover** - Collect 10 fish
+- ⚡ **Combo Master** - Achieve 20x combo
+- 🛡️ **Perfect Cat** - Complete 10 perfect landings
+- 🌟 **Survival Expert** - Survive for 5 minutes
+
+## 🔧 Development Process
+
+### Phase 1: Project Planning (Weeks 1-2)
+- Define game concept and core mechanics
+- Design game architecture and module division
+- Create basic project structure
+
+### Phase 2: Core Development (Weeks 3-6)
+- Implement character system and physics engine
+- Develop environment system and visual effects
+- Integrate audio system and sound effects
+
+### Phase 3: Feature Enhancement (Weeks 7-8)
+- Implement weather system and particle effects
+- Develop scoring system and achievement system
+- Optimize game performance and user experience
+
+### Phase 4: Testing & Optimization (Weeks 9-10)
+- Comprehensive game functionality testing
+- Bug fixes and performance improvements
+- Complete documentation and deployment
+
+## 🐛 Known Issues
+
+### Current Problems
+1. **Cloud Platform Collision Detection**: Position offset may occur in certain situations
+2. **Weather Transition Timing**: Snow landing detection may need optimization
+3. **Audio Loading**: Some browsers may experience audio loading delays
+4. **Mobile Adaptation**: Touch controls need further optimization
+
+### Optimization Suggestions
+- Improve collision detection algorithms for better accuracy
+- Optimize particle system performance
+- Enhance mobile user experience
+- Add more game levels and content
+
+## 🤝 Contributing
+
+Welcome to submit Issues and Pull Requests to improve this project!
+
+### How to Contribute
+1. Fork this project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## 👨‍💻 Author
+
+**University of London Computer Science Undergraduate Student**
+- Project: Black Cat Granary Saga: Dream Prologue
+- Course: Programming 1 Final Examination
+- Semester: Spring 2025
+
+## 🙏 Acknowledgments
+
+- Thanks to the p5.js community for the excellent framework
+- Thanks to the University of London Computer Science Department for guidance
+- Thanks to all test users for valuable feedback
+
+## 📞 Contact
+
+For questions or suggestions, please contact:
+- Create a [GitHub Issue](https://github.com/your-username/game_project_6/issues)
+- Send email to: your-email@example.com
+
+---
+
+**🎮 Start your black cat adventure journey now!** 
+
+*"Guard the granary, repel the mice, and experience a magical cat adventure!"*
