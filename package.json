@@ -26,14 +26,14 @@
         "http-server": "^14.1.1",
         "gh-pages": "^6.0.0"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/your-username/game_project_6.git"
-    },
-    "bugs": {
-        "url": "https://github.com/your-username/game_project_6/issues"
-    },
-    "homepage": "https://your-username.github.io/game_project_6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/issues"
+  },
+  "homepage": "https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6",
     "engines": {
         "node": ">=14.0.0"
     }

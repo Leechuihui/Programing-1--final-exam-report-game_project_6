@@ -3,7 +3,7 @@
 > **University of London Computer Science Undergraduate Final Programming Assignment 1**  
 > A 2D platformer game developed with p5.js, telling the adventure story of a black cat warrior protecting the granary
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-blue?style=for-the-badge&logo=github)](https://your-username.github.io/game_project_6)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-blue?style=for-the-badge&logo=github)](https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6)
 [![p5.js](https://img.shields.io/badge/p5.js-1.9.0-ff6b6b?style=for-the-badge&logo=p5.js)](https://p5js.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-f7df1e?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -101,7 +101,7 @@ As night falls, the wind carries whispers of the mouse horde. Shadowpaw tightens
    ```
 
 ### Online Experience
-- [GitHub Pages Online Version](https://your-username.github.io/game_project_6)
+- [GitHub Pages Online Version](https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6)
 
 ## 🎮 Game Controls
 
