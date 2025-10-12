@@ -1,7 +1,10 @@
 {
-    "name": "black-cat-granary-saga",
+    "name": "@leechuihui/black-cat-granary-saga",
     "version": "1.0.0",
-    "description": "A 2D platformer game developed with p5.js - University of London Computer Science Final Assignment",
+    "description": "A heartfelt 2D platformer game developed with p5.js - University of London Computer Science Final Assignment. A digital memorial to childhood mountain cat memories.",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
     "main": "index.html",
     "scripts": {
         "start": "http-server -p 8000 -c-1",
@@ -18,7 +21,29 @@
         "html5",
         "canvas",
         "university",
-        "assignment"
+        "assignment",
+        "childhood-memories",
+        "mountain-cat",
+        "digital-memorial",
+        "heartfelt-game",
+        "black-cat",
+        "granary-saga"
+    ],
+    "files": [
+        "index.html",
+        "main.js",
+        "character.js",
+        "environment.js",
+        "weather.js",
+        "score_system.js",
+        "game_modules.js",
+        "audio_system.js",
+        "sketch.js",
+        "p5.min.js",
+        "p5.sound.min.js",
+        "assets/",
+        "README.md",
+        "LICENSE"
     ],
     "author": "University of London Computer Science Student",
     "license": "MIT",
