@@ -241,7 +241,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or suggestions, please contact:
 - Create a [GitHub Issue](https://github.com/your-username/game_project_6/issues)
-- Send email to: your-email@example.com
+- Send email to: lizhuhui999@gmail.com
 
 ---
 
