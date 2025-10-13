@@ -40,18 +40,36 @@
 <div align="center">
 
 #### 🎬 Full Gameplay Demo
-[![Gameplay Video](https://via.placeholder.com/800x450/9b59b6/ffffff?text=Click+to+Watch+Full+Gameplay+Demo)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![Gameplay Video](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
 *Complete gameplay walkthrough showcasing all features*
 
+**📹 Direct Video Link**: [Watch Demo Video](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
+
 #### ⚡ Quick Gameplay Highlights
-[![Highlights](https://via.placeholder.com/400x225/3498db/ffffff?text=Quick+Highlights)](https://www.youtube.com/watch?v=YOUR_HIGHLIGHTS_ID)
-*Fast-paced action highlights*
+> **🎬 Additional Videos Coming Soon!**  
+> *Create highlight reels and story videos*
+
+[![Highlights](https://img.shields.io/badge/⚡_Create_Highlights-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/upload)
 
 #### 🌟 Personal Story & Development
-[![Story](https://via.placeholder.com/400x225/e67e22/ffffff?text=Personal+Story)](https://www.youtube.com/watch?v=YOUR_STORY_ID)
-*The heartfelt story behind this game*
+> **💝 Story Video Coming Soon!**  
+> *Share the childhood mountain cat story*
+
+[![Story](https://img.shields.io/badge/💝_Share_Your_Story-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/upload)
 
 </div>
+
+#### 📋 Video Upload Guide
+
+**Current Video**: ✅ `demo1.mov` - Full gameplay demonstration
+
+**To add more videos**:
+1. **Upload video files** to `assets/videos/` folder
+2. **Update README.md** with new video links
+3. **For YouTube videos**: Upload to YouTube and use video ID
+4. **For direct files**: Use GitHub raw file links
+
+**Video formats supported**: `.mov`, `.mp4`, `.webm`, `.avi`
 
 ### 🎯 Live Demo
 
