@@ -9,6 +9,64 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
+## 🎮 Game Preview
+
+### 📸 Screenshots
+
+<div align="center">
+
+#### 🌅 Day Mode - Village Granary
+![Day Mode](https://via.placeholder.com/800x450/4a90e2/ffffff?text=Day+Mode+-+Village+Granary+Scene)
+*Shadowpaw defending the granary during daylight*
+
+#### 🌙 Night Mode - Starry Sky
+![Night Mode](https://via.placeholder.com/800x450/2c3e50/ffffff?text=Night+Mode+-+Starry+Sky+Adventure)
+*Magical night scene with twinkling stars and meteor effects*
+
+#### ⚡ Weather Effects - Storm
+![Weather Effects](https://via.placeholder.com/800x450/34495e/ffffff?text=Dynamic+Weather+-+Rain+and+Lightning)
+*Dynamic weather system with rain, snow, and lightning*
+
+#### 🐭 Combat System
+![Combat](https://via.placeholder.com/800x450/e74c3c/ffffff?text=Combat+System+-+vs+Mouse+Enemies)
+*Strategic battles with intelligent AI mouse enemies*
+
+#### 🎁 Power-ups & Collectibles
+![Power-ups](https://via.placeholder.com/800x450/f39c12/ffffff?text=Power-ups+and+Collectibles)
+*Speed boost, shield, magnet, and health items*
+
+</div>
+
+### 🎥 Gameplay Video
+
+<div align="center">
+
+#### 🎬 Full Gameplay Demo
+[![Gameplay Video](https://via.placeholder.com/800x450/9b59b6/ffffff?text=Click+to+Watch+Full+Gameplay+Demo)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+*Complete gameplay walkthrough showcasing all features*
+
+#### ⚡ Quick Gameplay Highlights
+[![Highlights](https://via.placeholder.com/400x225/3498db/ffffff?text=Quick+Highlights)](https://www.youtube.com/watch?v=YOUR_HIGHLIGHTS_ID)
+*Fast-paced action highlights*
+
+#### 🌟 Personal Story & Development
+[![Story](https://via.placeholder.com/400x225/e67e22/ffffff?text=Personal+Story)](https://www.youtube.com/watch?v=YOUR_STORY_ID)
+*The heartfelt story behind this game*
+
+</div>
+
+### 🎯 Live Demo
+
+<div align="center">
+
+[![Play Now](https://img.shields.io/badge/🎮_Play_Now-Live_Demo-00ff00?style=for-the-badge&logo=github)](https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6)
+
+**Experience the game directly in your browser!**
+
+</div>
+
+---
+
 ## 📖 Project Overview
 
 **Black Cat Granary Saga: Dream Prologue** is a heartfelt 2D platformer game that serves as both an entertaining adventure and a deeply personal tribute to childhood memories. Players control Shadowpaw, a brave black cat warrior protecting the village granary in the autumn of 1970. 
