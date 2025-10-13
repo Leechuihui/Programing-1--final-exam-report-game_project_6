@@ -23,24 +23,7 @@
 
 *Complete gameplay walkthrough showcasing all features*
 
-</div>
 
-#### 🎥 How to Watch the Video
-
-**Option 1: Online Player** *(Recommended)*
-- Click the "Watch Demo Video" button above
-- Opens a dedicated video player page
-- Works in all modern browsers
-
-**Option 2: Direct Download**
-1. Click the download link above
-2. Save the video file to your device
-3. Open with any video player (QuickTime, VLC, etc.)
-
-**Option 3: GitHub Raw Link**
-- [Direct Video Access](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/raw/main/assets/videos/demo1.mov)
-
-</div>
 
 ---
 
