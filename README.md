@@ -13,11 +13,17 @@
 
 <div align="center">
 
-[![Watch Demo Video](https://img.shields.io/badge/🎬_Watch_Demo_Video-FF6B6B?style=for-the-badge&logo=video)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
+### 📹 Video Player
 
-**📹 [Download & Watch Game Demo (19.9 MB)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)**
+<video width="600" height="338" controls poster="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png">
+  <source src="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov" type="video/mp4">
+  <source src="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov" type="video/quicktime">
+  <p>Your browser does not support the video tag. <a href="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov">Download the video instead</a></p>
+</video>
 
-*Complete gameplay walkthrough showcasing all features*
+*Complete gameplay walkthrough showcasing all features (19.9 MB)*
+
+**Alternative Download**: [Download demo1.mov](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov) if video doesn't play
 
 </div>
 
@@ -73,7 +79,16 @@
 
 <div align="center">
 
+<video width="800" height="450" controls poster="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png">
+  <source src="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov" type="video/mp4">
+  <source src="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov" type="video/quicktime">
+  <p>Your browser does not support the video tag. <a href="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov">Download the video instead</a></p>
+</video>
 
+**📹 Direct Video Player** - *Complete gameplay walkthrough showcasing all features*  
+*File size: 19.9 MB - Play directly in your browser*
+
+**Alternative Download**: [Download demo1.mov](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov) if video doesn't play
 
 </div>
 
