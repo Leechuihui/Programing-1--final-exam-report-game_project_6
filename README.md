@@ -16,22 +16,38 @@
 <div align="center">
 
 #### 🌅 Day Mode - Village Granary
-![Day Mode]([https://via.placeholder.com/800x450/4a90e2/ffffff?text=Day+Mode+-+Village+Granary+Scene](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png))
+![Day Mode](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png)
 *Shadowpaw defending the granary during daylight*
 
 #### 🌙 Night Mode - Starry Sky
-![Night Mode]([https://via.placeholder.com/800x450/2c3e50/ffffff?text=Night+Mode+-+Starry+Sky+Adventure](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.15.png))
+![Night Mode](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.15.png)
 *Magical night scene with twinkling stars and meteor effects*
 
 #### ⚡ Weather Effects - Storm
-![Weather Effects]([https://via.placeholder.com/800x450/34495e/ffffff?text=Dynamic+Weather+-+Rain+and+Lightning](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/assets/screenshots/截屏2025-10-13 上午8.15.15.png))
+![Weather Effects](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.23.png)
 *Dynamic weather system with rain, snow, and lightning*
 
 #### 🐭 Combat System
-![Combat]([https://via.placeholder.com/800x450/e74c3c/ffffff?text=Combat+System+-+vs+Mouse+Enemies](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.47.png))
+![Combat](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.47.png)
 *Strategic battles with intelligent AI mouse enemies*
 
+#### 🎁 Power-ups & Collectibles
+![Power-ups](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png)
+*Speed boost, shield, magnet, and health items*
 
+</div>
+
+### 🖼️ Screenshot Gallery
+
+<div align="center">
+
+| 🌅 Day Mode | 🌙 Night Mode |
+|-------------|---------------|
+| ![Day Mode](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png) | ![Night Mode](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.15.png) |
+
+| ⚡ Weather Effects | 🐭 Combat System |
+|-------------------|------------------|
+| ![Weather Effects](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.23.png) | ![Combat](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.47.png) |
 
 </div>
 
