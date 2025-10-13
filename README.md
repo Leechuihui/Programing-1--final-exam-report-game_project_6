@@ -56,10 +56,19 @@
 <div align="center">
 
 #### 🎬 Full Gameplay Demo
-[![Gameplay Video](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
-*Complete gameplay walkthrough showcasing all features*
 
-**📹 Direct Video Link**: [Watch Demo Video](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
+<div align="center">
+
+**🎥 Game Demo Video (19.9 MB)**
+
+[![Gameplay Video](https://img.shields.io/badge/🎬_Watch_Demo_Video-FF6B6B?style=for-the-badge&logo=video)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
+
+**📹 Download & Watch**: [demo1.mov](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
+
+*Complete gameplay walkthrough showcasing all features*  
+*File size: 19.9 MB - Click to download and watch*
+
+</div>
 
 #### ⚡ Quick Gameplay Highlights
 > **🎬 Additional Videos Coming Soon!**  
@@ -75,17 +84,30 @@
 
 </div>
 
-#### 📋 Video Upload Guide
+#### 📋 Video Watching Guide
 
-**Current Video**: ✅ `demo1.mov` - Full gameplay demonstration
+**Current Video**: ✅ `demo1.mov` - Full gameplay demonstration (19.9 MB)
 
-**To add more videos**:
-1. **Upload video files** to `assets/videos/` folder
-2. **Update README.md** with new video links
-3. **For YouTube videos**: Upload to YouTube and use video ID
-4. **For direct files**: Use GitHub raw file links
+**How to watch the video**:
+1. **Click the video link** above
+2. **Download the file** to your device
+3. **Open with video player** (QuickTime, VLC, etc.)
+4. **Enjoy the gameplay demo!**
+
+**Alternative viewing options**:
+- Upload to YouTube for online streaming
+- Use video conversion tools for smaller file sizes
+- Share via cloud storage services
 
 **Video formats supported**: `.mov`, `.mp4`, `.webm`, `.avi`
+
+#### 🎬 Future Video Plans
+
+**Coming soon**:
+- **YouTube version** for online streaming
+- **Compressed version** for faster download
+- **Highlight reels** and story videos
+- **Development process** documentation
 
 ### 🎯 Live Demo
 
