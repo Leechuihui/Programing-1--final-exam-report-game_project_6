@@ -9,6 +9,20 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
+## 🎬 Watch Demo Video
+
+<div align="center">
+
+[![Watch Demo Video](https://img.shields.io/badge/🎬_Watch_Demo_Video-FF6B6B?style=for-the-badge&logo=video)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
+
+**📹 [Download & Watch Game Demo (19.9 MB)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)**
+
+*Complete gameplay walkthrough showcasing all features*
+
+</div>
+
+---
+
 ## 🎮 Game Preview
 
 ### 📸 Screenshots
@@ -109,13 +123,13 @@
 - **Highlight reels** and story videos
 - **Development process** documentation
 
-### 🎯 Live Demo
+### 🎯 Live Demo & Video
 
 <div align="center">
 
-[![Play Now](https://img.shields.io/badge/🎮_Play_Now-Live_Demo-00ff00?style=for-the-badge&logo=github)](https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6)
+[![Play Now](https://img.shields.io/badge/🎮_Play_Now-Live_Demo-00ff00?style=for-the-badge&logo=github)](https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6) [![Watch Demo](https://img.shields.io/badge/🎬_Watch_Demo_Video-FF6B6B?style=for-the-badge&logo=video)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
 
-**Experience the game directly in your browser!**
+**🎮 Play directly in your browser | 📹 Watch the demo video (19.9 MB)**
 
 </div>
 
