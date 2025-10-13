@@ -24,7 +24,7 @@
 *Magical night scene with twinkling stars and meteor effects*
 
 #### ⚡ Weather Effects - Storm
-![Weather Effects]([https://via.placeholder.com/800x450/34495e/ffffff?text=Dynamic+Weather+-+Rain+and+Lightning](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.23.png))
+![Weather Effects]([https://via.placeholder.com/800x450/34495e/ffffff?text=Dynamic+Weather+-+Rain+and+Lightning](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/assets/screenshots/截屏2025-10-13 上午8.15.15.png))
 *Dynamic weather system with rain, snow, and lightning*
 
 #### 🐭 Combat System
