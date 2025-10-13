@@ -13,17 +13,32 @@
 
 <div align="center">
 
-### 📹 Video Player
+### 📹 Game Demo Video
 
-<video width="600" height="338" controls poster="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png">
-  <source src="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov" type="video/mp4">
-  <source src="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov" type="video/quicktime">
-  <p>Your browser does not support the video tag. <a href="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov">Download the video instead</a></p>
-</video>
+<div align="center">
 
-*Complete gameplay walkthrough showcasing all features (19.9 MB)*
+[![Watch Demo Video](https://img.shields.io/badge/🎬_Watch_Demo_Video-FF6B6B?style=for-the-badge&logo=video)](https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6/video.html)
 
-**Alternative Download**: [Download demo1.mov](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov) if video doesn't play
+**📥 [Download Game Demo (19.9 MB)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)**
+
+*Complete gameplay walkthrough showcasing all features*
+
+</div>
+
+#### 🎥 How to Watch the Video
+
+**Option 1: Online Player** *(Recommended)*
+- Click the "Watch Demo Video" button above
+- Opens a dedicated video player page
+- Works in all modern browsers
+
+**Option 2: Direct Download**
+1. Click the download link above
+2. Save the video file to your device
+3. Open with any video player (QuickTime, VLC, etc.)
+
+**Option 3: GitHub Raw Link**
+- [Direct Video Access](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/raw/main/assets/videos/demo1.mov)
 
 </div>
 
@@ -79,16 +94,16 @@
 
 <div align="center">
 
-<video width="800" height="450" controls poster="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png">
-  <source src="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov" type="video/mp4">
-  <source src="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov" type="video/quicktime">
-  <p>Your browser does not support the video tag. <a href="https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov">Download the video instead</a></p>
-</video>
+[![Gameplay Demo](https://img.shields.io/badge/🎬_Watch_Gameplay_Demo-FF6B6B?style=for-the-badge&logo=video)](https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6/video.html)
 
-**📹 Direct Video Player** - *Complete gameplay walkthrough showcasing all features*  
-*File size: 19.9 MB - Play directly in your browser*
+**📥 [Download Gameplay Video (19.9 MB)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)**
 
-**Alternative Download**: [Download demo1.mov](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov) if video doesn't play
+*Complete gameplay walkthrough showcasing all features*
+
+#### 🎥 Video Preview
+
+![Video Preview](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png)
+*Click the button above to download and watch the full demo video*
 
 </div>
 
