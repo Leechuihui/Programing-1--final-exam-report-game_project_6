@@ -73,14 +73,7 @@
 
 <div align="center">
 
-**🎥 Game Demo Video (19.9 MB)**
 
-[![Gameplay Video](https://img.shields.io/badge/🎬_Watch_Demo_Video-FF6B6B?style=for-the-badge&logo=video)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
-
-**📹 Download & Watch**: [demo1.mov](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)
-
-*Complete gameplay walkthrough showcasing all features*  
-*File size: 19.9 MB - Click to download and watch*
 
 </div>
 
