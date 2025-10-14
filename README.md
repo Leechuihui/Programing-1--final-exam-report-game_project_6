@@ -69,66 +69,6 @@
 
 </div>
 
-### 🎥 Gameplay Video
-
-<div align="center">
-
-#### 🎬 Full Gameplay Demo
-
-<div align="center">
-
-[![Gameplay Demo](https://img.shields.io/badge/🎬_Watch_Gameplay_Demo-FF6B6B?style=for-the-badge&logo=video)](https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6/video.html)
-
-**📥 [Download Gameplay Video (19.9 MB)](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/videos/demo1.mov)**
-
-*Complete gameplay walkthrough showcasing all features*
-
-#### 🎥 Video Preview
-
-![Video Preview](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/blob/main/assets/screenshots/%E6%88%AA%E5%B1%8F2025-10-13%20%E4%B8%8A%E5%8D%888.15.36.png)
-*Click the button above to download and watch the full demo video*
-
-</div>
-
-#### ⚡ Quick Gameplay Highlights
-> **🎬 Additional Videos Coming Soon!**  
-> *Create highlight reels and story videos*
-
-[![Highlights](https://img.shields.io/badge/⚡_Create_Highlights-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/upload)
-
-#### 🌟 Personal Story & Development
-> **💝 Story Video Coming Soon!**  
-> *Share the childhood mountain cat story*
-
-[![Story](https://img.shields.io/badge/💝_Share_Your_Story-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/upload)
-
-</div>
-
-#### 📋 Video Watching Guide
-
-**Current Video**: ✅ `demo1.mov` - Full gameplay demonstration (19.9 MB)
-
-**How to watch the video**:
-1. **Click the video link** above
-2. **Download the file** to your device
-3. **Open with video player** (QuickTime, VLC, etc.)
-4. **Enjoy the gameplay demo!**
-
-**Alternative viewing options**:
-- Upload to YouTube for online streaming
-- Use video conversion tools for smaller file sizes
-- Share via cloud storage services
-
-**Video formats supported**: `.mov`, `.mp4`, `.webm`, `.avi`
-
-#### 🎬 Future Video Plans
-
-**Coming soon**:
-- **YouTube version** for online streaming
-- **Compressed version** for faster download
-- **Highlight reels** and story videos
-- **Development process** documentation
-
 ### 🎯 Live Demo & Video
 
 <div align="center">
