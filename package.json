@@ -1,0 +1,65 @@
+{
+    "name": "@leechuihui/black-cat-granary-saga",
+    "version": "1.0.0",
+    "description": "A heartfelt 2D platformer game developed with p5.js - University of London Computer Science Final Assignment. A digital memorial to childhood mountain cat memories.",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "main": "index.html",
+    "scripts": {
+        "start": "http-server -p 8000 -c-1",
+        "dev": "http-server -p 8000 -c-1 -o",
+        "build": "echo 'No build step required for static files'",
+        "deploy": "gh-pages -d ."
+    },
+    "keywords": [
+        "game",
+        "p5js",
+        "2d",
+        "platformer",
+        "javascript",
+        "html5",
+        "canvas",
+        "university",
+        "assignment",
+        "childhood-memories",
+        "mountain-cat",
+        "digital-memorial",
+        "heartfelt-game",
+        "black-cat",
+        "granary-saga"
+    ],
+    "files": [
+        "index.html",
+        "main.js",
+        "character.js",
+        "environment.js",
+        "weather.js",
+        "score_system.js",
+        "game_modules.js",
+        "audio_system.js",
+        "sketch.js",
+        "p5.min.js",
+        "p5.sound.min.js",
+        "assets/",
+        "README.md",
+        "LICENSE"
+    ],
+    "author": "University of London Computer Science Student",
+    "license": "MIT",
+    "devDependencies": {
+        "http-server": "^14.1.1",
+        "gh-pages": "^6.0.0"
+    },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/issues"
+  },
+  "homepage": "https://Leechuihui.github.io/Programing-1--final-exam-report-game_project_6",
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}
