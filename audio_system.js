@@ -104,6 +104,7 @@ class AudioSystem {
             this.sounds.jump = this.createTone(440, 0.1);                    // A4 note for jump
             this.sounds.collect = this.createTone(880, 0.2);                 // A5 note for collection
             this.sounds.hit = this.createTone(220, 0.3);                     // A3 note for hits
+            this.sounds.scream = this.createTone(900, 0.25);                // 鼠猫碰撞尖叫
             this.sounds.achievement = this.createChord([523, 659, 784], 0.5); // C major chord for achievements
 
             console.log('Programmatic sounds created successfully');
@@ -315,6 +316,11 @@ class AudioSystem {
         this.playSound('hit');                       // Play hit sound
     }
 
+    // 鼠猫碰撞时尖叫
+    onCatHitByMouse() {
+        this.playSound('scream');
+    }
+
     onAchievement() {
         this.playSound('achievement');               // Play achievement sound
     }
@@ -335,22 +341,19 @@ class AudioSystem {
         // Stop all environmental sounds first
         this.stopEnvironmentSounds();
 
-        // Play appropriate sounds based on weather and time
-        if (weatherStatus.isRaining && !weatherStatus.isSnowing) {
-            // Only play rain when raining and not snowing (loop playback)
+        // Play appropriate sounds based on weather and time（支持雨雪同时时播雨声）
+        if (weatherStatus.isRaining) {
             this.playSound('rain', true);
-            console.log('🌧️ Playing rain sound (looped)');
+            console.log(weatherStatus.isSnowing ? '🌧️❄️ Playing rain sound (rain+snow)' : '🌧️ Playing rain sound (looped)');
         }
 
         if (weatherStatus.isNight && !weatherStatus.isSnowing) {
-            // Only play frog sounds at night when not snowing (loop playback)
             this.playSound('frog', true);
             console.log('🐸 Playing frog sound (night loop)');
         }
 
-        // Keep quiet during snow for peaceful atmosphere
         if (weatherStatus.isSnowing) {
-            console.log('❄️ Snowy weather - keeping quiet for peaceful snow night atmosphere');
+            console.log(weatherStatus.isRaining ? '❄️🌧️ Rain+snow - rain sound on, snow atmosphere' : '❄️ Snowy weather - keeping quiet for peaceful snow night atmosphere');
         }
 
         // Don't play frog sounds during day
@@ -360,7 +363,7 @@ class AudioSystem {
 
         // Record current playback state
         this.currentEnvironmentSounds = {
-            rain: weatherStatus.isRaining && !weatherStatus.isSnowing,
+            rain: weatherStatus.isRaining,
             frog: weatherStatus.isNight && !weatherStatus.isSnowing
         };
     }

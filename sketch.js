@@ -3192,55 +3192,41 @@ function drawCatFourLegs() { // 绘制四条腿的猫咪 (Draw four-legged cat);
     pop(); // 恢复之前保存的绘图状态 (Restore previously saved drawing state);
 } // 结束 (End);
 
-// 青蛙坐在树梢弹吉他（带动画和吉他细节优化）(Frog sitting on treetop playing guitar (with animation and guitar detail optimization))
-function drawFrogWithGuitar(x, y, animT = 0) { // 绘制带吉他的青蛙函数 (Function to draw frog with guitar);
-    push(); // 保存当前绘图状态 (Save current drawing state);
-    translate(x, y); // 平移画布 (Translate canvas);
-    scale(1.2, 1.2); // 缩放画布 (Scale canvas);
-    // 动画参数 (Animation parameters)
-    let bodyBob = sin(animT * 0.08) * 5; // 身体上下起伏 (Body bobbing);
-    let headTilt = sin(animT * 0.05) * 0.15; // 头部倾斜 (Head tilt);
-    let leftArmAngle = radians(-30) + sin(animT * 0.12) * 0.18; // 左臂角度 (Left arm angle);
-    let rightArmAngle = radians(45) + sin(animT * 0.15) * 0.2; // 右臂角度，调整为抓握琴头 (Right arm angle, adjusted to grip headstock);
-    let fingerPress = sin(animT * 0.2) * 0.3; // 手指按压动作 (Finger pressing action);
-    let thumbMove = sin(animT * 0.18) * 0.2; // 拇指移动 (Thumb movement);
-    let rightHandY = 22 + sin(animT * 0.18) * 4; // 右手y坐标 (Right hand y position) // *Note: This variable is not used. (注意：这个变量未使用)*;
-    let leftLegAngle = radians(-10) + sin(animT * 0.09) * 0.08; // 左腿角度 (Left leg angle);
-    let rightLegAngle = radians(10) - sin(animT * 0.09) * 0.08; // 右腿角度 (Right leg angle);
-    let blink = (floor(animT / 80) % 2 === 0 && animT % 120 > 100) ? 0.2 : 1; // 眨眼动画 (Blink animation);
-    let mouthOpen = 2 + abs(sin(animT * 0.13)) * 5; // 嘴巴张开程度 (Mouth open extent);
-    // 身体 (Body)
-    fill(80, 200, 80); // 设置填充颜色 (Set fill color);
-    ellipse(0, 20 + bodyBob, 38, 48); // 绘制身体椭圆 (Draw body ellipse);
-    // 头 (Head)
-    push(); // 保存当前绘图状态 (Save current drawing state);
-    rotate(headTilt); // 旋转头部 (Rotate head);
-    fill(80, 200, 80); // 设置填充颜色 (Set fill color);
-    ellipse(0, -10 + bodyBob, 38, 32); // 绘制头部椭圆 (Draw head ellipse);
-    // 下颚 (Lower jaw)
-    fill(70, 180, 70); // 设置填充颜色 (Set fill color);
-    arc(0, -2 + bodyBob, 38, 22, 0, PI); // 绘制下颚弧线 (Draw lower jaw arc);
-    // 头部高光 (Head highlight)
-    fill(255, 255, 255, 60); // 设置填充颜色和透明度 (Set fill color and alpha);
-    ellipse(-8, -18 + bodyBob, 10, 6); // 绘制高光椭圆 (Draw highlight ellipse);
-    // 下巴阴影 (Chin shadow)
-    fill(60, 120, 60, 60); // 设置填充颜色和透明度 (Set fill color and alpha);
-    ellipse(0, 2 + bodyBob, 18, 6); // 绘制阴影椭圆 (Draw shadow ellipse);
-    // 鼻孔 (Nostrils)
-    fill(60, 120, 60); // 设置填充颜色 (Set fill color);
-    ellipse(-4, -8 + bodyBob, 2, 1.2); // 绘制左鼻孔 (Draw left nostril);
-    ellipse(4, -8 + bodyBob, 2, 1.2); // 绘制右鼻孔 (Draw right nostril);
-    // 眼睛 (Eyes)
-    fill(255); // 设置填充颜色 (Set fill color);
-    ellipse(-10, -18, 12, 12 * blink); // 绘制左眼 (Draw left eye);
-    ellipse(10, -18, 12, 12 * blink); // 绘制右眼 (Draw right eye);
-    fill(0); // 设置填充颜色 (Set fill color);
-    ellipse(-10, -18, 5, 5 * blink); // 绘制左瞳孔 (Draw left pupil);
-    ellipse(10, -18, 5, 5 * blink); // 绘制右瞳孔 (Draw right pupil);
-    // 眼睛高光 (Eye highlight)
-    fill(255, 255, 255, 180); // 设置填充颜色和透明度 (Set fill color and alpha);
-    ellipse(-8, -20, 2.2, 1.2 * blink); // 绘制左眼高光 (Draw left eye highlight);
-    ellipse(12, -20, 2.2, 1.2 * blink); // 绘制右眼高光 (Draw right eye highlight);
+// 青蛙坐在树梢弹吉他（造型纠正：圆身体、头顶大眼、四肢分明）(Frog on treetop - corrected design)
+function drawFrogWithGuitar(x, y, animT = 0) {
+    push();
+    translate(x, y);
+    scale(1.2, 1.2);
+    let bodyBob = sin(animT * 0.08) * 5;
+    let headTilt = sin(animT * 0.05) * 0.15;
+    let leftArmAngle = radians(-30) + sin(animT * 0.12) * 0.18;
+    let rightArmAngle = radians(45) + sin(animT * 0.15) * 0.2;
+    let fingerPress = sin(animT * 0.2) * 0.3;
+    let thumbMove = sin(animT * 0.18) * 0.2;
+    let leftLegAngle = radians(-10) + sin(animT * 0.09) * 0.08;
+    let rightLegAngle = radians(10) - sin(animT * 0.09) * 0.08;
+    let blink = (floor(animT / 80) % 2 === 0 && animT % 120 > 100) ? 0.2 : 1;
+    let mouthOpen = 2 + abs(sin(animT * 0.13)) * 5;
+    noStroke();
+    // 身体：圆润椭圆（青蛙典型体型）
+    fill(70, 190, 90);
+    ellipse(0, 22 + bodyBob, 36, 42);
+    // 头：与身体衔接，略圆
+    fill(75, 195, 95);
+    ellipse(0, -6 + bodyBob, 32, 28);
+    // 眼睛：在头顶两侧（青蛙造型）
+    fill(255);
+    ellipse(-9, -14 + bodyBob, 11, 11 * blink);
+    ellipse(9, -14 + bodyBob, 11, 11 * blink);
+    fill(0);
+    ellipse(-9, -14 + bodyBob, 4, 4 * blink);
+    ellipse(9, -14 + bodyBob, 4, 4 * blink);
+    fill(255);
+    ellipse(-8, -15 + bodyBob, 2, 2 * blink);
+    ellipse(10, -15 + bodyBob, 2, 2 * blink);
+    // 头部高光
+    fill(255, 255, 255, 50);
+    ellipse(-6, -18 + bodyBob, 8, 5);
     // 腮红（更自然）(Blush (more natural))
     noStroke(); // 不绘制边框 (No stroke);
     for (let i = 0; i < 6; i++) { // 循环绘制腮红 (Loop to draw blush);
@@ -3248,16 +3234,13 @@ function drawFrogWithGuitar(x, y, animT = 0) { // 绘制带吉他的青蛙函数
         ellipse(-16, -10, 7 - i, 3 - i * 0.4); // 绘制左腮红 (Draw left blush);
         ellipse(16, -10, 7 - i, 3 - i * 0.4); // 绘制右腮红 (Draw right blush);
     } // 结束for循环 (End of for loop);
-    // 嘴（微笑+弹奏时张合）(Mouth (smile + open/close when playing))
-    stroke(60, 120, 60); // 设置边框颜色 (Set stroke color);
-    strokeWeight(2); // 设置线宽 (Set stroke weight);
-    noFill(); // 不填充 (No fill);
-    arc(0, -5, 18, mouthOpen, 0, PI); // 绘制嘴巴弧线 (Draw mouth arc);
-    arc(-4, -4, 5, 3, 0, PI / 2); // 绘制嘴巴弧线 (Draw mouth arc);
-    arc(4, -4, 5, 3, PI / 2, PI); // 绘制嘴巴弧线 (Draw mouth arc);
-    noStroke(); // 不绘制边框 (No stroke);
-    pop(); // 恢复之前保存的绘图状态 (Restore previously saved drawing state);
-    // 腿（晃动）(Legs (swinging))
+    // 嘴（微笑+弹奏时张合）
+    stroke(60, 120, 60);
+    strokeWeight(2);
+    noFill();
+    arc(0, -5 + bodyBob, 18, mouthOpen, 0, PI);
+    noStroke();
+    // 腿（晃动）
     push(); // 保存当前绘图状态 (Save current drawing state);
     rotate(leftLegAngle); // 旋转左腿 (Rotate left leg);
     fill(80, 200, 80); // 设置填充颜色 (Set fill color);
@@ -3318,88 +3301,64 @@ function drawFrogWithGuitar(x, y, animT = 0) { // 绘制带吉他的青蛙函数
     translate(-12, 22 + bodyBob); // 移动到吉他琴身位置 (Move to guitar body position)
     rotate(leftArmAngle); // 旋转左臂 (Rotate left arm);
 
-    // 左臂（抱琴状态）(Left arm in holding position)
-    fill(80, 200, 80); // 设置填充颜色 (Set fill color);
-    ellipse(-8, -2, 12, 20); // 绘制左臂椭圆，调整位置 (Draw left arm ellipse, adjusted position);
+    // 左臂（抱琴状态）- 比例缩小
+    fill(80, 200, 80);
+    ellipse(-6, -1, 9, 14);
 
-    // 左手掌（抱琴姿势）(Left palm in holding position)
-    fill(85, 205, 85); // 稍微亮一点的绿色 (Slightly brighter green);
-    ellipse(-2, 8, 10, 12); // 绘制手掌 (Draw palm);
+    // 左手掌（抱琴姿势）
+    fill(85, 205, 85);
+    ellipse(-2, 6, 7, 9);
 
-    // 拇指支撑琴背 (Thumb supporting guitar back)
-    fill(90, 210, 90); // 设置填充颜色 (Set fill color);
-    ellipse(-8, 6, 4, 7); // 拇指位置 (Thumb position);
+    // 拇指支撑琴背
+    fill(90, 210, 90);
+    ellipse(-6, 5, 3, 5);
 
-    // 四指按弦姿势 (Four fingers in chord pressing position)
-    fill(120, 220, 120); // 设置填充颜色 (Set fill color);
+    // 四指按弦姿势
+    fill(120, 220, 120);
+    ellipse(1, 4 + fingerPress, 2, 4.5 - fingerPress * 0.4);
+    ellipse(3, 5 + fingerPress * 0.8, 2, 5 - fingerPress * 0.25);
+    ellipse(4.5, 5.5 + fingerPress * 0.6, 2, 4.5 - fingerPress * 0.35);
+    ellipse(6, 6 + sin(animT * 0.25) * 0.2, 1.5, 4);
 
-    // 食指按弦（动态按压）(Index finger pressing string with dynamic pressure)
-    ellipse(2, 5 + fingerPress, 2.5, 6 - fingerPress * 0.5);
+    // 手指关节细节
+    fill(110, 200, 110, 150);
+    ellipse(1, 1.5, 1.5, 1.5);
+    ellipse(3, 2.5, 1.5, 1.5);
+    ellipse(4.5, 3.5, 1.5, 1.5);
 
-    // 中指按弦（动态按压）(Middle finger pressing string with dynamic pressure)
-    ellipse(4, 6 + fingerPress * 0.8, 2.5, 6.5 - fingerPress * 0.3);
+    // 按弦压力表现（手指弯曲）
+    fill(70, 180, 70, 120);
+    ellipse(3, 6, 4, 1.5);
 
-    // 无名指按弦（动态按压）(Ring finger pressing string with dynamic pressure)
-    ellipse(6, 7 + fingerPress * 0.6, 2.5, 6 - fingerPress * 0.4);
+    pop();
 
-    // 小指悬空（轻微摆动）(Pinky finger hovering with slight sway)
-    ellipse(8, 8 + sin(animT * 0.25) * 0.3, 2, 5);
+    // 右手抓握琴头 - 比例缩小
+    push();
+    translate(38, 18 + bodyBob);
+    rotate(rightArmAngle);
 
-    // 手指关节细节 (Finger joint details)
-    fill(110, 200, 110, 150); // 半透明效果 (Semi-transparent);
-    ellipse(2, 2, 2, 2); // 食指关节 (Index finger joint);
-    ellipse(4, 3, 2, 2); // 中指关节 (Middle finger joint);
-    ellipse(6, 4, 2, 2); // 无名指关节 (Ring finger joint);
+    fill(80, 200, 80);
+    ellipse(-12, 1, 8, 12);
 
-    // 按弦压力表现（手指弯曲）(String pressing pressure indication)
-    fill(70, 180, 70, 120); // 阴影色 (Shadow color);
-    ellipse(4, 8, 6, 2); // 按弦阴影 (String pressing shadow);
+    fill(85, 205, 85);
+    ellipse(-6, 6, 7, 10);
 
-    pop(); // 恢复之前保存的绘图状态 (Restore previously saved drawing state);
+    fill(90, 210, 90);
+    ellipse(-10 + thumbMove, 4, 3 + thumbMove * 0.3, 5);
 
-    // 右手抓握琴头（精细手指动作）- 在吉他之后绘制，显示在外面 (Right hand gripping headstock (detailed finger action) - drawn after guitar to show outside)
-    push(); // 保存当前绘图状态 (Save current drawing state);
+    fill(120, 220, 120);
+    ellipse(-4, 2.5 + fingerPress * 0.5, 2, 4 + fingerPress * 0.5);
+    ellipse(-2, 3.5 + fingerPress * 0.4, 2, 4.5 + fingerPress * 0.4);
+    ellipse(0, 4 + fingerPress * 0.3, 2, 4 + fingerPress * 0.3);
+    ellipse(1.5, 5 + sin(animT * 0.3) * 0.15, 1.5, 3.5);
 
-    // 调整右手位置到琴头位置 (Adjust right hand position to headstock)
-    translate(38, 18 + bodyBob); // 移动到琴头位置 (Move to headstock position)
-    rotate(rightArmAngle); // 旋转右臂 (Rotate right arm);
+    fill(110, 200, 110, 150);
+    ellipse(-4, 0.5, 1.5, 1.5);
+    ellipse(-2, 1.5, 1.5, 1.5);
+    ellipse(0, 2.5, 1.5, 1.5);
 
-    // 右臂（从身体延伸到琴头）(Right arm extending from body to headstock)
-    fill(80, 200, 80); // 设置填充颜色 (Set fill color);
-    ellipse(-15, 2, 10, 18); // 绘制右臂椭圆，调整位置 (Draw right arm ellipse, adjusted position);
-
-    // 右手掌（抓握状态）(Right palm in gripping position)
-    fill(85, 205, 85); // 稍微亮一点的绿色 (Slightly brighter green);
-    ellipse(-8, 8, 9, 14); // 绘制手掌 (Draw palm);
-
-    // 拇指抓握琴头背面（动态调节）(Thumb gripping back of headstock with dynamic adjustment)
-    fill(90, 210, 90); // 设置填充颜色 (Set fill color);
-    ellipse(-12 + thumbMove, 5, 4 + thumbMove * 0.5, 6); // 拇指位置，动态调节 (Thumb position with dynamic adjustment);
-
-    // 四指包围琴头前面 (Four fingers wrapping around front of headstock)
-    fill(120, 220, 120); // 设置填充颜色 (Set fill color);
-
-    // 食指（动态抓握）(Index finger with dynamic grip)
-    ellipse(-5, 3 + fingerPress * 0.5, 2.5, 5 + fingerPress);
-
-    // 中指（动态抓握）(Middle finger with dynamic grip) 
-    ellipse(-3, 4 + fingerPress * 0.4, 2.5, 5.5 + fingerPress * 0.8);
-
-    // 无名指（动态抓握）(Ring finger with dynamic grip)
-    ellipse(-1, 5 + fingerPress * 0.3, 2.5, 5 + fingerPress * 0.6);
-
-    // 小指（轻微颤动）(Pinky finger with slight tremor)
-    ellipse(1, 6 + sin(animT * 0.3) * 0.2, 2, 4.5);
-
-    // 手指关节细节 (Finger joint details)
-    fill(110, 200, 110, 150); // 半透明效果 (Semi-transparent);
-    ellipse(-5, 1, 2, 2); // 食指关节 (Index finger joint);
-    ellipse(-3, 2, 2, 2); // 中指关节 (Middle finger joint);
-    ellipse(-1, 3, 2, 2); // 无名指关节 (Ring finger joint);
-
-    // 抓握力度表现（手指弯曲阴影）(Grip strength indication with finger curve shadows)
-    fill(70, 180, 70, 100); // 阴影色 (Shadow color);
-    ellipse(-4, 6, 6, 3); // 手指弯曲阴影 (Finger curve shadow);
+    fill(70, 180, 70, 100);
+    ellipse(-3, 5, 4, 2);
 
     pop(); // 恢复之前保存的绘图状态 (Restore previously saved drawing state);
 

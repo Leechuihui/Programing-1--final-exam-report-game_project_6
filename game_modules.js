@@ -24,8 +24,8 @@ class WeatherSystem {
             SNOW_DURATION: 30000,    // 下雪持续30秒（与昼夜循环一致）
             DAY_DURATION: 30000,     // 白天持续30秒  
             NIGHT_DURATION: 30000,   // 黑夜持续30秒
-            MAX_RAINDROPS: 400,
-            MAX_SNOW: 500 // 🚀 大幅增加最大雪花数量：从200提升到500
+            MAX_RAINDROPS: 200,
+            MAX_SNOW: 180           // 降低数量避免卡顿
         };
 
         // 天气计时器状态
@@ -82,15 +82,14 @@ class WeatherSystem {
         let nextWeather = null;
         let nextDayNight = null;
 
-        // 检查当前天气是否应该结束
-        if (this.currentWeatherType === 'snow' && elapsed >= this.config.SNOW_DURATION) {
+        // 检查当前天气是否应该结束（下雪或雨雪同时）
+        if ((this.currentWeatherType === 'snow' || this.currentWeatherType === 'rain_snow') && elapsed >= this.config.SNOW_DURATION) {
             // 下雪30秒后，检查是否完全落地
             if (this.isSnowFullyGrounded()) {
                 shouldSwitch = true;
-                nextWeather = 'none';
-                nextDayNight = this.currentDayNight; // 保持昼夜不变
+                nextWeather = this.currentWeatherType === 'rain_snow' ? 'rain' : 'none'; // 雨雪同时结束后保留雨或清空
+                nextDayNight = this.currentDayNight;
             } else {
-                // 如果雪花未落地，延长下雪时间
                 console.log(`❄️ 下雪时间到但雪花未完全落地，延长下雪时间...`);
                 return;
             }
@@ -98,7 +97,7 @@ class WeatherSystem {
             // 白天30秒后切换
             shouldSwitch = true;
             nextDayNight = 'night';
-            nextWeather = random(['snow', 'none']); // 夜晚可能下雪
+            nextWeather = random(['snow', 'rain_snow', 'none']); // 夜晚可能下雪或雨雪同时
         } else if (this.currentDayNight === 'night' && elapsed >= this.config.NIGHT_DURATION) {
             // 黑夜30秒后切换
             shouldSwitch = true;
@@ -111,19 +110,19 @@ class WeatherSystem {
         }
     }
 
-    // 执行天气切换
+    // 执行天气切换（支持下雨与下雪同时进行：weatherType 可为 "rain" | "snow" | "rain_snow" | "none"）
     performWeatherSwitch(weatherType, dayNight) {
         // 更新状态
         this.currentWeatherType = weatherType;
         this.currentDayNight = dayNight;
         this.currentWeatherStartTime = Date.now();
 
-        // 设置天气
-        this.isRaining = (weatherType === "rain");
-        this.isSnowing = (weatherType === "snow");
+        // 设置天气：允许 rain_snow 同时下雨下雪
+        this.isRaining = (weatherType === "rain" || weatherType === "rain_snow");
+        this.isSnowing = (weatherType === "snow" || weatherType === "rain_snow");
         this.isNight = (dayNight === "night");
 
-        // 如果开始下雪，立即激活超级快速雪花
+        // 如果开始下雪（含雨雪同时），立即激活超级快速雪花
         if (this.isSnowing) {
             let activatedCount = 0;
             for (let i = 0; i < this.snowParticles.length && activatedCount < 80; i++) {
@@ -153,8 +152,8 @@ class WeatherSystem {
             for (let m of this.meteors) m.active = false;
         }
 
-        // 清理雨滴
-        this.raindrops = [];
+        // 仅在不下雨时清理雨滴（雨雪同时时保留雨滴）
+        if (!this.isRaining) this.raindrops = [];
 
         // 通知音频系统天气变化
         if (gameController && gameController.audioSystem) {
@@ -163,18 +162,19 @@ class WeatherSystem {
 
         // 计算下次切换时间
         let duration = 0;
-        if (weatherType === 'snow') duration = this.config.SNOW_DURATION / 1000;
+        if (weatherType === 'snow' || weatherType === 'rain_snow') duration = this.config.SNOW_DURATION / 1000;
         else if (dayNight === 'day') duration = this.config.DAY_DURATION / 1000;
         else if (dayNight === 'night') duration = this.config.NIGHT_DURATION / 1000;
 
-        console.log(`✅ 天气切换: ${dayNight === 'night' ? '夜晚🌙' : '白天☀️'}, ${weatherType === 'snow' ? '下雪❄️' : weatherType === 'none' ? '晴朗🌤️' : weatherType} (持续${duration}秒)`);
+        let weatherLabel = weatherType === 'snow' ? '下雪❄️' : weatherType === 'rain_snow' ? '雨雪❄️🌧️' : weatherType === 'rain' ? '下雨🌧️' : weatherType === 'none' ? '晴朗🌤️' : weatherType;
+        console.log(`✅ 天气切换: ${dayNight === 'night' ? '夜晚🌙' : '白天☀️'}, ${weatherLabel} (持续${duration}秒)`);
     }
 
-    // 保留原来的手动切换方法，但更新为新系统
+    // 保留原来的手动切换方法，支持雨雪同时
     switchWeather() {
-        // 手动切换天气（保持兼容性）
+        // 手动切换天气（含雨雪同时）
         this.performWeatherSwitch(
-            random(["rain", "snow", "none"]),
+            random(["rain", "snow", "rain_snow", "none"]),
             random(["day", "night"])
         );
     }
@@ -317,8 +317,8 @@ class WeatherSystem {
             }
         }
 
-        if (frameCount % 2 === 0) {
-            for (let i = 0; i < 5; i++) {
+        if (frameCount % 3 === 0) {
+            for (let i = 0; i < 2; i++) {
                 this.addRaindrop();
             }
         }
@@ -327,9 +327,9 @@ class WeatherSystem {
     updateSnow() {
         if (!this.isSnowing) return;
 
-        // 每帧生成新的雪花粒子 - 大幅增加生成频率和数量
-        if (frameCount % 1 === 0) { // 🚀 每帧都生成雪花，最高频率
-            for (let i = 0; i < 12; i++) { // 🚀 大幅增加每次生成数量：12个雪花
+        // 每2帧生成少量雪花，避免每帧大量循环导致卡顿
+        if (frameCount % 2 === 0) {
+            for (let i = 0; i < 3; i++) {
                 this.addSnowParticle();
             }
         }
@@ -396,20 +396,17 @@ class WeatherSystem {
         rect(-cameraX, 0, width, height);
         pop();
 
-        // 绘制雨滴
+        // 绘制雨滴：小一点、白色
         for (let drop of this.raindrops) {
             if (!drop.active) continue;
 
             push();
-            // 主雨滴
-            stroke(180, 200, 255, 180);
-            strokeWeight(2);
-            line(drop.x - cameraX, drop.y, drop.x - cameraX - 6, drop.y + 12);
-
-            // 雨滴光效
-            stroke(220, 240, 255, 100);
+            stroke(255, 255, 255, 200);
             strokeWeight(1);
-            line(drop.x - cameraX + 1, drop.y, drop.x - cameraX - 4, drop.y + 10);
+            line(drop.x - cameraX, drop.y, drop.x - cameraX - 3, drop.y + 6);
+            stroke(255, 255, 255, 120);
+            strokeWeight(0.8);
+            line(drop.x - cameraX + 0.5, drop.y, drop.x - cameraX - 2, drop.y + 5);
             pop();
         }
 
@@ -433,51 +430,25 @@ class WeatherSystem {
 
         for (let p of this.snowParticles) {
             if (!p.active) continue;
-
-            // 雪花绘制
             fill(255, 255, 255, p.alpha);
             ellipse(p.x, p.y, p.size, p.size);
-
-            // 添加雪花细节效果
-            fill(255, 255, 255, p.alpha * 0.6);
-            ellipse(p.x + 1, p.y + 1, p.size * 0.7, p.size * 0.7);
-
-            // 雪花闪烁效果
-            if (sin(frameCount * 0.05 + p.x * 0.01) > 0.7) {
-                fill(255, 255, 255, p.alpha * 0.8);
-                ellipse(p.x, p.y, p.size * 1.2, p.size * 1.2);
-            }
         }
 
         pop();
     }
 
-    // 绘制地面积雪
+    // 绘制地面积雪（只绘制最近一段，避免卡顿）
     drawGroundSnow() {
         if (this.groundSnow.length === 0) return;
 
         noStroke();
-
-        // 重置变换矩阵，确保地面积雪不受相机影响
         push();
         resetMatrix();
-
-        for (let snow of this.groundSnow) {
-            // 主要积雪点
+        let toDraw = this.groundSnow.length > 100 ? this.groundSnow.slice(-100) : this.groundSnow;
+        for (let snow of toDraw) {
             fill(255, 255, 255, snow.alpha);
             ellipse(snow.x, snow.y, snow.size, snow.size * 0.7);
-
-            // 添加积雪的层次感
-            fill(255, 255, 255, snow.alpha * 0.6);
-            ellipse(snow.x - 1, snow.y + 1, snow.size * 0.8, snow.size * 0.5);
-
-            // 大积雪点添加额外细节
-            if (snow.size > 8) {
-                fill(255, 255, 255, snow.alpha * 0.4);
-                ellipse(snow.x + 2, snow.y - 1, snow.size * 0.6, snow.size * 0.4);
-            }
         }
-
         pop();
     }
 
@@ -970,12 +941,8 @@ class WeatherSystem {
 
     toggleRain() {
         this.isRaining = !this.isRaining;
-        if (this.isRaining) {
-            this.isSnowing = false;
-            this.snowParticles = [];
-        } else {
-            this.raindrops = [];
-        }
+        if (!this.isRaining) this.raindrops = [];
+        // 不再强制关闭下雪，允许雨雪同时
 
         // 通知音频系统雨天变化
         if (gameController && gameController.audioSystem) {
@@ -1022,11 +989,15 @@ class WeatherSystem {
 
     // 获取当前天气状态
     getWeatherStatus() {
+        let weatherType = "none";
+        if (this.isRaining && this.isSnowing) weatherType = "rain_snow";
+        else if (this.isRaining) weatherType = "rain";
+        else if (this.isSnowing) weatherType = "snow";
         let status = {
             isNight: this.isNight,
             isRaining: this.isRaining,
             isSnowing: this.isSnowing,
-            weatherType: this.isRaining ? "rain" : (this.isSnowing ? "snow" : "none"),
+            weatherType: weatherType,
             currentWeatherType: this.currentWeatherType,
             currentDayNight: this.currentDayNight,
             remainingTime: this.getRemainingTime(),
@@ -1042,7 +1013,7 @@ class WeatherSystem {
         const elapsed = currentTime - this.currentWeatherStartTime;
 
         let totalDuration = 0;
-        if (this.currentWeatherType === 'snow') {
+        if (this.currentWeatherType === 'snow' || this.currentWeatherType === 'rain_snow') {
             totalDuration = this.config.SNOW_DURATION;
         } else if (this.currentDayNight === 'day') {
             totalDuration = this.config.DAY_DURATION;
@@ -1694,10 +1665,13 @@ class CharacterSystem {
     }
 
     checkCollisions() {
-        // 检查老鼠碰撞（造成伤害）
+        // 检查老鼠碰撞（造成伤害，并播放尖叫）
         if (!this.isInvincible) {
             for (let mouse of this.mice) {
                 if (mouse.alive && dist(this.cat.x, this.cat.y, mouse.x, mouse.y) < 40) {
+                    if (gameController && gameController.audioSystem) {
+                        gameController.audioSystem.onCatHitByMouse();
+                    }
                     this.takeDamage(20);
                     console.log('被老鼠攻击！');
                     break;
@@ -1802,9 +1776,26 @@ class CharacterSystem {
             fill(50);
         }
 
-        // 猫咪身体
+        // 猫咪身体与头部（先填色）
         ellipse(0, 50, 80, 100);
         ellipse(0, 0, 80, 80);
+
+        // 人物轮廓：身体与头部描边，使轮廓清晰
+        noFill();
+        stroke(28);
+        strokeWeight(2);
+        ellipse(0, 50, 80, 100);
+        ellipse(0, 0, 80, 80);
+        noStroke();
+
+        // 猫咪尾巴：从身体后侧连出，与身体一体
+        fill(50);
+        noStroke();
+        push();
+        translate(36, 62);
+        rotate(0.32);
+        ellipse(0, 0, 14, 52);
+        pop();
 
         // 猫咪耳朵
         fill(40);
@@ -2198,6 +2189,12 @@ class EnvironmentSystem {
 
     drawMountains() {
         noStroke();
+        // 远山层（更淡、更大，增加层次感）
+        fill(75, 85, 110, 200);
+        ellipse(worldWidth * 0.25, floorPos_y - 80, 420, 280);
+        ellipse(worldWidth * 0.6, floorPos_y - 120, 380, 260);
+        ellipse(worldWidth * 0.85, floorPos_y - 60, 350, 240);
+        // 近山层
         fill(60, 70, 90);
         rect(0, floorPos_y - 300, worldWidth, 300);
     }
@@ -2249,19 +2246,115 @@ class EnvironmentSystem {
         noStroke();
         fill(65, 105, 225);
         rect(0, floorPos_y - 50, worldWidth, 120);
+        // 水面波纹高光
+        stroke(255, 255, 255, 45);
+        strokeWeight(2);
+        for (let i = 0; i < 5; i++) {
+            let waveY = floorPos_y - 45 + sin((frameCount * 0.02 + i * 1.5) % TWO_PI) * 4;
+            line(0, waveY, worldWidth, waveY + 3);
+        }
+        noStroke();
     }
 
     drawTrees() {
-        fill(34, 139, 34);
         for (let tree of this.trees) {
-            if (tree.x + 100 > cameraX && tree.x - 100 < cameraX + width) {
-                rect(tree.x, tree.y, 20, tree.h);
-            }
+            if (tree.x + 100 < cameraX || tree.x - 100 > cameraX + width) continue;
+            noStroke();
+            // 树干
+            fill(60, 45, 30);
+            rect(tree.x - cameraX, tree.y, 20, tree.h);
+            // 树冠（椭圆）
+            fill(34, 139, 34);
+            ellipse(tree.x - cameraX + 10, tree.y - 8, 50, 36);
+            fill(40, 160, 50);
+            ellipse(tree.x - cameraX + 10, tree.y - 14, 36, 28);
         }
+    }
+
+    // 青蛙：正确造型（圆身体、头顶大眼、四肢），画在第一棵树梢
+    drawFrog() {
+        if (this.trees.length === 0) return;
+        let tree = this.trees[0];
+        if (tree.x + 60 < cameraX || tree.x - 60 > cameraX + width) return;
+        let fx = tree.x + 10;
+        let fy = tree.y - 28;
+        push();
+        translate(fx - cameraX, fy);
+        noStroke();
+        // 身体：椭圆
+        fill(60, 180, 80);
+        ellipse(0, 8, 28, 22);
+        // 头与身体一体
+        fill(70, 190, 90);
+        ellipse(0, -2, 24, 20);
+        // 眼睛：头顶大眼
+        fill(255);
+        ellipse(-6, -8, 10, 10);
+        ellipse(6, -8, 10, 10);
+        fill(0);
+        ellipse(-6, -8, 4, 4);
+        ellipse(6, -8, 4, 4);
+        fill(255);
+        ellipse(-5, -9, 2, 2);
+        ellipse(7, -9, 2, 2);
+        // 嘴
+        stroke(50, 120, 60);
+        strokeWeight(1);
+        noFill();
+        arc(0, 2, 10, 6, 0, PI);
+        noStroke();
+        // 前肢（手）：比例缩小，更贴近身体
+        fill(60, 180, 80);
+        ellipse(-9, 5, 4, 6);
+        ellipse(9, 5, 4, 6);
+        // 后腿（略大于前肢，符合青蛙比例）
+        ellipse(-8, 18, 7, 5);
+        ellipse(8, 18, 7, 5);
+        pop();
     }
 
     drawBushes() {
         // 灌木丛已删除，不再绘制
+    }
+
+    // 地面草地线（地平线一层草）
+    drawGroundGrassLine() {
+        noStroke();
+        fill(40, 120, 50);
+        rect(0, floorPos_y, worldWidth, 12);
+        fill(55, 140, 60);
+        rect(0, floorPos_y, worldWidth, 5);
+        // 几根小草竖线
+        stroke(50, 130, 55);
+        strokeWeight(2);
+        for (let i = 0; i < 24; i++) {
+            let gx = (i * 87 + frameCount * 0.3) % (worldWidth + 80) - 40;
+            if (gx < cameraX - 20 || gx > cameraX + width + 20) continue;
+            line(gx - cameraX, floorPos_y, gx - cameraX + 4, floorPos_y - 8 - (i % 3) * 4);
+        }
+        noStroke();
+    }
+
+    // 蝴蝶装饰（2 只，在视野内飘动）
+    drawButterflies() {
+        let t = frameCount * 0.03;
+        for (let i = 0; i < 2; i++) {
+            let bx = cameraX + width * 0.25 + i * width * 0.5 + sin(t + i * 2) * 40;
+            let by = floorPos_y - 100 - i * 60 + cos(t * 0.7 + i) * 25;
+            if (bx < cameraX - 30 || bx > cameraX + width + 30) continue;
+            push();
+            translate(bx - cameraX, by);
+            noStroke();
+            fill(255, 200, 80);
+            ellipse(0, 0, 10, 6);
+            fill(255, 180, 50);
+            ellipse(-4, 0, 6, 8);
+            ellipse(4, 0, 6, 8);
+            fill(255, 220, 150);
+            ellipse(-5, -1, 4, 5);
+            ellipse(5, -1, 4, 5);
+            pop();
+        }
     }
 
     drawLotusLeaves() {
@@ -2324,7 +2417,10 @@ class EnvironmentSystem {
             push();
             translate(p.x, p.y);
             noStroke();
-            fill(240);
+            // 云朵下方阴影
+            fill(0, 0, 0, 25);
+            ellipse(4, 8, p.w * 0.58, p.h * 0.8);
+            fill(240, 242, 255);
             ellipse(0, 0, p.w * 0.6, p.h);
             pop();
         }
@@ -2341,7 +2437,10 @@ class EnvironmentSystem {
         this.drawLotusLeaves(); // 在水面绘制荷叶
         this.drawCloudPlatforms();
         this.drawTrees();
+        this.drawFrog();
         this.drawBushes();
+        this.drawGroundGrassLine(); // 地面草线
+        this.drawButterflies();    // 蝴蝶装饰
 
         // 绘制新地形元素
         this.drawHills();
@@ -2795,6 +2894,45 @@ class GameController {
         console.log('游戏重新开始');
     }
 
+    // 天空渐变与太阳/月亮（丰富画面）
+    drawSkyAndCelestial() {
+        noStroke();
+        let isNight = this.weatherSystem.isNight;
+        if (isNight) {
+            // 夜空渐变：深蓝到略亮
+            for (let y = 0; y < height; y += 8) {
+                let t = y / height;
+                fill(15 + t * 15, 18 + t * 20, 45 + t * 25);
+                rect(0, y, width, 9);
+            }
+            // 月亮 + 光晕
+            let moonX = width * 0.82;
+            let moonY = height * 0.18;
+            fill(220, 225, 240, 60);
+            ellipse(moonX, moonY, 90, 90);
+            fill(240, 242, 255);
+            ellipse(moonX, moonY, 42, 42);
+            fill(200, 205, 220);
+            ellipse(moonX + 6, moonY - 4, 8, 8);
+        } else {
+            // 白天天空渐变：顶部深蓝到底部浅蓝
+            for (let y = 0; y < height; y += 8) {
+                let t = y / height;
+                fill(80 + t * 60, 140 + t * 80, 220 + t * 35);
+                rect(0, y, width, 9);
+            }
+            // 太阳 + 光晕
+            let sunX = width * 0.78;
+            let sunY = height * 0.2;
+            fill(255, 230, 180, 120);
+            ellipse(sunX, sunY, 85, 85);
+            fill(255, 220, 100);
+            ellipse(sunX, sunY, 55, 55);
+            fill(255, 200, 50);
+            ellipse(sunX, sunY, 38, 38);
+        }
+    }
+
     draw() {
         // 绘制背景
         if (this.weatherSystem.isNight) {
@@ -2803,6 +2941,8 @@ class GameController {
             background(100, 155, 255);
         }
 
+        // 天空渐变 + 太阳/月亮（丰富画面）
+        this.drawSkyAndCelestial();
         // 绘制环境（背景层）
         this.environmentSystem.draw();
 
@@ -3029,6 +3169,35 @@ class GameController {
         text(`成就: ${scoreInfo.achievements.length}/${this.scoreSystem.achievements.length}`, 30, powerUpY + 15);
     }
 
+    // main.js 调用的接口名（带 ed）
+    handleKeyPressed(key, keyCode) {
+        this.handleKeyPress(key);
+    }
+
+    handleKeyReleased(key, keyCode) {
+        this.handleKeyRelease(key);
+    }
+
+    handleMousePressed() {
+        if (this.gameState !== 'playing') return;
+        if (typeof mouseButton !== 'undefined' && mouseButton === LEFT) {
+            this.characterSystem.jump();
+            if (this.scoreSystem && this.scoreSystem.jump) this.scoreSystem.jump();
+        }
+    }
+
+    handleMouseWheel(event) {
+        if (this.gameState !== 'playing') return;
+        // 预留：缩放等
+    }
+
+    handleWindowResize() {
+        if (typeof width !== 'undefined' && typeof height !== 'undefined') {
+            if (typeof worldWidth !== 'undefined') worldWidth = width * 2 + 300;
+            if (typeof floorPos_y !== 'undefined') floorPos_y = height * 0.875;
+        }
+    }
+
     handleKeyPress(key) {
         // 游戏状态相关按键（任何时候都可以使用）
         if (key === 'p' || key === 'P') {
@@ -3069,6 +3238,8 @@ class GameController {
                 break;
             case 's':
             case 'S':
+            case 'g':
+            case 'G':
                 this.weatherSystem.toggleSnow();
                 break;
             case 'm':
