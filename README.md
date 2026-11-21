@@ -1,3 +1,5 @@
+**English** | [简体中文](README.zh-CN.md)
+
 # Black Cat Granary Saga: Dream Prologue 🐱⚔️
 
 > **University of London Computer Science Undergraduate Final Programming Assignment 1**  
@@ -166,8 +168,8 @@ The game's protagonist, Shadowpaw, embodies the spirit of that beloved mountain 
 
 1. **Clone the project**
    ```bash
-   git clone https://github.com/your-username/game_project_6.git
-   cd game_project_6
+   git clone https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6.git
+   cd Programing-1--final-exam-report-game_project_6
    ```
 
 2. **Start local server**
@@ -326,7 +328,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 For questions or suggestions, please contact:
-- Create a [GitHub Issue](https://github.com/your-username/game_project_6/issues)
+- Create a [GitHub Issue](https://github.com/Leechuihui/Programing-1--final-exam-report-game_project_6/issues)
 - Send email to: lizhuhui999@gmail.com
 
 ---
